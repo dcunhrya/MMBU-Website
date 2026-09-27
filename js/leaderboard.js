@@ -202,14 +202,6 @@
     });
   }
 
-  function renderPrivateDomain(domainName) {
-    renderChart(
-      domainChart,
-      privateEntries(domainName),
-      "MMBU Private Set · " + domainName
-    );
-  }
-
   function taskEntries(taskName) {
     var table = window.MMBU_PRIVATE_TASKS;
     return MODELS.map(function (model) {
@@ -218,60 +210,58 @@
     });
   }
 
-  function renderPrivateTask(taskName) {
+  function renderPrivateSplit(kind, name) {
+    var entries = kind === "task" ? taskEntries(name) : privateEntries(name);
+    var label = kind === "task" ? "Task" : "Domain";
     renderChart(
-      taskChart,
-      taskEntries(taskName),
-      "MMBU Private Set · " + taskName
+      splitChart,
+      entries,
+      "MMBU Private Set · " + label + " · " + name
     );
   }
 
-  function bindTabs(tablist, names, onSelect) {
-    names.forEach(function (name, index) {
-      var button = document.createElement("button");
-      button.type = "button";
-      button.setAttribute("role", "tab");
-      button.setAttribute("aria-selected", index === 0 ? "true" : "false");
-      button.className = index === 0 ? "is-selected" : "";
-      button.textContent = name;
-      button.addEventListener("click", function () {
-        tablist.querySelectorAll("button").forEach(function (other) {
-          other.classList.remove("is-selected");
-          other.setAttribute("aria-selected", "false");
-        });
-        button.classList.add("is-selected");
-        button.setAttribute("aria-selected", "true");
-        onSelect(name);
-      });
-      tablist.appendChild(button);
+  function fillSplitSelect(kind) {
+    var names = kind === "task"
+      ? window.MMBU_PRIVATE_TASKS.tasks.map(function (task) { return task.name; })
+      : window.MMBU_PRIVATE_DOMAINS.domains.map(function (domain) { return domain.name; });
+    splitSelect.replaceChildren();
+    names.forEach(function (name) {
+      var option = document.createElement("option");
+      option.value = name;
+      option.textContent = name;
+      splitSelect.appendChild(option);
     });
-    if (names.length) onSelect(names[0]);
+    splitCaption.textContent = kind === "task" ? "Task" : "Domain";
+    if (names.length) renderPrivateSplit(kind, names[0]);
   }
 
   var publicChart = document.getElementById("chart-public");
   var privateChart = document.getElementById("chart-private");
-  var domainChart = document.getElementById("chart-private-domain");
-  var taskChart = document.getElementById("chart-private-task");
-  var tablist = document.getElementById("domain-tabs");
-  var taskTabs = document.getElementById("task-tabs");
+  var splitChart = document.getElementById("chart-private-split");
+  var splitKind = document.getElementById("split-kind");
+  var splitSelect = document.getElementById("split-select");
+  var splitCaption = document.getElementById("split-select-caption");
   if (publicChart && privateChart) {
     renderChart(publicChart, publicEntries(), "MMBU Public Set");
     renderChart(privateChart, privateEntries(null), "MMBU Private Set");
   }
 
-  if (domainChart && tablist && window.MMBU_PRIVATE_DOMAINS) {
-    bindTabs(
-      tablist,
-      window.MMBU_PRIVATE_DOMAINS.domains.map(function (domain) { return domain.name; }),
-      renderPrivateDomain
-    );
-  }
-
-  if (taskChart && taskTabs && window.MMBU_PRIVATE_TASKS) {
-    bindTabs(
-      taskTabs,
-      window.MMBU_PRIVATE_TASKS.tasks.map(function (task) { return task.name; }),
-      renderPrivateTask
-    );
+  if (splitChart && splitKind && splitSelect && window.MMBU_PRIVATE_DOMAINS && window.MMBU_PRIVATE_TASKS) {
+    var currentKind = "domain";
+    fillSplitSelect(currentKind);
+    splitKind.querySelectorAll("button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        currentKind = button.getAttribute("data-kind");
+        splitKind.querySelectorAll("button").forEach(function (other) {
+          var selected = other === button;
+          other.classList.toggle("is-selected", selected);
+          other.setAttribute("aria-selected", selected ? "true" : "false");
+        });
+        fillSplitSelect(currentKind);
+      });
+    });
+    splitSelect.addEventListener("change", function () {
+      renderPrivateSplit(currentKind, splitSelect.value);
+    });
   }
 })();

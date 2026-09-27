@@ -353,6 +353,41 @@ body {
   outline-offset: 2px;
 }
 
+.split-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.split-controls .domain-tabs {
+  margin-bottom: 0;
+}
+
+.split-select-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #444;
+  font-size: 0.85rem;
+}
+
+.split-select-label select {
+  border: 1px solid #e4c4ed;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  padding: 0.28rem 0.55rem;
+  font-size: 0.85rem;
+  max-width: min(100%, 360px);
+}
+
+.split-select-label select:focus-visible {
+  outline: 2px solid #7a3580;
+  outline-offset: 2px;
+}
+
 .domain-note {
   color: #666;
   font-size: 0.8rem;

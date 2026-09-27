@@ -210,20 +210,24 @@
     );
   }
 
-  var publicChart = document.getElementById("chart-public");
-  var privateChart = document.getElementById("chart-private");
-  var domainChart = document.getElementById("chart-private-domain");
-  var tablist = document.getElementById("domain-tabs");
-  if (publicChart && privateChart) {
-    renderChart(publicChart, publicEntries(), "MMBU Public Set");
-    renderChart(privateChart, privateEntries(null), "MMBU Private Set");
+  function taskEntries(taskName) {
+    var table = window.MMBU_PRIVATE_TASKS;
+    return MODELS.map(function (model) {
+      var pair = table.scores[model.id][taskName];
+      return { model: model, score: pair[0], n: pair[1] };
+    });
   }
 
-  if (domainChart && tablist && window.MMBU_PRIVATE_DOMAINS) {
-    var choices = window.MMBU_PRIVATE_DOMAINS.domains.map(function (domain) {
-      return domain.name;
-    });
-    choices.forEach(function (name, index) {
+  function renderPrivateTask(taskName) {
+    renderChart(
+      taskChart,
+      taskEntries(taskName),
+      "MMBU Private Set · " + taskName
+    );
+  }
+
+  function bindTabs(tablist, names, onSelect) {
+    names.forEach(function (name, index) {
       var button = document.createElement("button");
       button.type = "button";
       button.setAttribute("role", "tab");
@@ -237,10 +241,37 @@
         });
         button.classList.add("is-selected");
         button.setAttribute("aria-selected", "true");
-        renderPrivateDomain(name);
+        onSelect(name);
       });
       tablist.appendChild(button);
     });
-    if (choices.length) renderPrivateDomain(choices[0]);
+    if (names.length) onSelect(names[0]);
+  }
+
+  var publicChart = document.getElementById("chart-public");
+  var privateChart = document.getElementById("chart-private");
+  var domainChart = document.getElementById("chart-private-domain");
+  var taskChart = document.getElementById("chart-private-task");
+  var tablist = document.getElementById("domain-tabs");
+  var taskTabs = document.getElementById("task-tabs");
+  if (publicChart && privateChart) {
+    renderChart(publicChart, publicEntries(), "MMBU Public Set");
+    renderChart(privateChart, privateEntries(null), "MMBU Private Set");
+  }
+
+  if (domainChart && tablist && window.MMBU_PRIVATE_DOMAINS) {
+    bindTabs(
+      tablist,
+      window.MMBU_PRIVATE_DOMAINS.domains.map(function (domain) { return domain.name; }),
+      renderPrivateDomain
+    );
+  }
+
+  if (taskChart && taskTabs && window.MMBU_PRIVATE_TASKS) {
+    bindTabs(
+      taskTabs,
+      window.MMBU_PRIVATE_TASKS.tasks.map(function (task) { return task.name; }),
+      renderPrivateTask
+    );
   }
 })();

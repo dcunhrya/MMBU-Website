@@ -175,7 +175,7 @@
       <div class="leaderboard" id="leaderboard">
         <h3 class="title is-4">MMBU Leaderboard</h3>
         <p class="leaderboard-intro">
-          Mean accuracy on a hard subset of MMBU with open-ended VQA that created both the public and private sets. Each frontier model has its own color, held constant across both charts. Hover a bar to compare that model on the other split. More models benchmarked on MMBU are shown below.
+          From MMBU, we curated a hard subset consisting of full-context open-ended VQA and split that into public and private sets with mean accuracy shown below. Each frontier model has its own color, held constant across both charts. Hover a bar to compare that model on the other split. More models benchmarked on MMBU are shown below.
         </p>
         <div class="bench-grid">
           <figure class="bench-card">
@@ -189,9 +189,14 @@
             <div class="bench-chart" id="chart-private" data-split="private"></div>
           </figure>
           <figure class="bench-card">
-            <figcaption class="bench-title">MMBU-Private by domain</figcaption>
+            <figcaption class="bench-title">MMBU Private set by domain</figcaption>
             <div class="domain-tabs" id="domain-tabs" role="tablist" aria-label="Medical domain"></div>
             <div class="bench-chart" id="chart-private-domain" data-split="private-domain"></div>
+          </figure>
+          <figure class="bench-card">
+            <figcaption class="bench-title">MMBU Private set by task</figcaption>
+            <div class="domain-tabs" id="task-tabs" role="tablist" aria-label="Task"></div>
+            <div class="bench-chart" id="chart-private-task" data-split="private-task"></div>
           </figure>
         </div>
         <p class="leaderboard-note">
@@ -325,6 +330,7 @@
 
   <script src="js/main.js"></script>
   <script src="js/private_domains.js"></script>
-  <script src="js/leaderboard.js?v=12"></script>
+  <script src="js/private_tasks.js?v=13"></script>
+  <script src="js/leaderboard.js?v=13"></script>
 </body>
 </html>

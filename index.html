@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MMBU: A Massive Multi-modal Biomedical Understanding Benchmark">
+  <title>MMBU — Massive Multi-modal Biomedical Understanding Benchmark [ECCV 2026]</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-2 publication-title">
+          <span class="mmbu-accent">MMBU</span>: A Massive Multi-modal Biomedical Understanding Benchmark to Probe the Perception Capabilities of Vision-Language Models [ECCV 2026]
+        </h1>
+        <a class="challenge-logo-link" href="https://akiranishii.github.io/mmbu-challenge/" target="_blank" rel="noopener">
+          <img class="challenge-logo" src="images/mmbu-challenge-logo.png" alt="MMBU Challenge">
+        </a>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><a href="#">Ryan D'Cunha</a><sup>*1</sup>,</span>
+          <span class="author-block"><a href="#">Alejandro Lozano</a><sup>*1</sup>,</span>
+          <span class="author-block"><a href="#">Xiaoxiao Sun</a><sup>*1</sup>,</span>
+          <span class="author-block"><a href="#">Daniel Vela Jarquin</a><sup>3</sup>,</span>
+          <span class="author-block"><a href="#">Min Woo Sun</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Josiah Aklilu</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">James Burgess</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Yuhui Zhang</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Ryan Nayebi</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Paola Avila Robayo</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Jin Ye</a><sup>4</sup>,</span>
+          <span class="author-block"><a href="#">Ming Hu</a><sup>4</sup>,</span>
+          <span class="author-block"><a href="#">Zhongying Deng</a><sup>5</sup>,</span>
+          <span class="author-block"><a href="#">Junjun He</a><sup>6</sup>,</span>
+          <span class="author-block"><a href="#">Xin Chen</a><sup>7</sup>,</span>
+          <span class="author-block"><a href="#">Yue Yao</a><sup>7</sup>,</span>
+          <span class="author-block"><a href="#">Robert Tibshirani</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Jeffrey J. Nirschl</a><sup>2</sup>,</span>   
+          <span class="author-block"><a href="#">Serena Yeung-Levy</a><sup>1</sup></span>
+        </div>
+
+        <div class="is-size-6 publication-affiliations">
+          <span class="affiliation-block"><sup>1</sup>Stanford University, Stanford, CA, USA</span>
+          <span class="affiliation-block"><sup>2</sup>University of Wisconsin–Madison, Madison, WI, USA</span>
+          <span class="affiliation-block"><sup>3</sup>Instituto Tecnológico de Monterrey, Mexico</span>
+          <span class="affiliation-block"><sup>4</sup>Monash University, Melbourne, VIC, Australia</span>
+          <span class="affiliation-block"><sup>5</sup>University of Cambridge, Cambridge, United Kingdom</span>
+          <span class="affiliation-block"><sup>6</sup>Shanghai Jiao Tong University, Shanghai, China</span>
+          <span class="affiliation-block"><sup>7</sup>Shandong University, Shandong, China</span>
+        </div>
+        <p class="is-size-6 mt-2"><sup>*</sup>Equal contribution</p>
+
+        <div class="publication-links buttons is-centered mt-4">
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2606.06696" class="external-link button is-normal is-rounded is-mmbu" target="_blank" rel="noopener">
+              <span class="icon"><i class="fas fa-book-open"></i></span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="#bibtex" class="external-link button is-normal is-rounded is-mmbu">
+              <span class="icon"><i class="ai ai-semantic-scholar"></i></span>
+              <span>BibTeX</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section tldr-section">
+    <div class="container is-max-desktop">
+      <div class="tldr-box">
+        <h2 class="title is-4"><i class="fas fa-file-alt"></i> Abstract</h2>
+        <p>
+          Vision and language models (VLMs) hold immense promise to transform biomedical imaging workflows,
+          from detecting lesions in chest X-rays to profiling cellular features in microscopy. Realizing this
+          potential, however, requires robust and fine-grained visual perception. Models need to correctly
+          interpret subtle features in images, and they must do so across diverse biomedical modalities,
+          scales, and contexts. Nevertheless, current benchmarks remain limited. To address these gaps, we
+          introduce the Massive Multimodal Biomedical Understanding (MMBU) benchmark. It is the largest
+          biomedical vision and language benchmark to date, covering 35 submodalities with rich structured
+          metadata. It includes both open and closed versions of ungrounded classification, grounded
+          classification, and object detection, enabling systematic evaluation of model performance across
+          biological scales, clinical settings, and imaging modalities. Evaluating 15 open-weight and 2
+          frontier VLMs, we find that while medical adaptation provides measurable gains for some models,
+          the high accuracy often reported on established benchmarks can mask deficiencies in visual
+          perception and domain generalization.
+        </p>
+      </div>
+
+      <div class="notice-box">
+        <h2 class="title is-5"><i class="fas fa-clock"></i> Dataset Release &amp; MMBU Challenge</h2>
+        <p>
+          The MMBU public set is officially releasing on 10/1/2026 after a 4-month embargo following publication
+          in conjunction with the <a href="https://akiranishii.github.io/mmbu-challenge/" target="_blank" rel="noopener">MMBU Challenge</a>.
+          This should be used for internal benchmarking and reporting unverified results.
+          MMBU authors maintain an MMBU private set that can be used for verified benchmarking.
+          Hugging Face links can be found below.
+        </p>
+        <p class="hf-link">
+          <span aria-hidden="true">🤗</span>
+          MMBU Public set:
+          <a href="https://huggingface.co/datasets/mmbu-challenge/mmbu-public" target="_blank" rel="noopener">https://huggingface.co/datasets/mmbu-challenge/mmbu-public</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Figure 1 -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <figure class="result-figure">
+        <img src="images/fig1_motivation.png" alt="The data landscape of MMBU">
+        <figcaption><strong>Figure 1.</strong> The data landscape of MMBU. Current biomedical VLM evaluation relies on roughly 20 commonly used datasets; MMBU addresses data pollution and lack of diversity at scale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Methods -->
+  <section class="section hero is-light is-small">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Methods</h2>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="method-card">
+            <h3 class="title is-5"><i class="fas fa-database"></i> Benchmark Scale</h3>
+            <p>410 curated datasets spanning 11 modalities, 35 submodalities, 20 specimens, and 95 body-part regions — with 13 structured metadata fields per sample including provenance, modality, stain, specimen, and institution. Stats shown in Figure 2</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="method-card">
+            <h3 class="title is-5"><i class="fas fa-tasks"></i> Tasks</h3>
+            <p>Ungrounded classification, grounded classification (from segmentation masks and bounding boxes), and object detection — each in open- and closed-ended VQA formats with three context levels (no context, modality, full context).</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="method-card">
+            <h3 class="title is-5"><i class="fas fa-robot"></i> Models Evaluated</h3>
+            <p>17 VLMs including MedGemma, Lingshu, OctoMed, LLaVA-Med, InternVL3.5, Qwen2.5/3-VL, GPT-4.1-mini, and GPT-5.4-mini — plus their general-domain base counterparts where applicable.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="method-card">
+            <h3 class="title is-5"><i class="fas fa-clipboard-check"></i> Curation Pipeline</h3>
+            <p>Multidisciplinary expert taxonomy → dataset discovery across Zenodo, Kaggle, and Hugging Face → metadata standardization → metadata-driven question construction with human-in-the-loop validation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Figure 2 -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <figure class="result-figure">
+        <img src="images/mmbu_statistics.png" alt="MMBU dataset composition statistics">
+        <figcaption><strong>Figure 2.</strong> Overview of MMBU dataset composition across modalities, submodalities, medical domains, and body parts.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results</h2>
+
+      <div class="leaderboard" id="leaderboard">
+        <h3 class="title is-4">Full-context leaderboard</h3>
+        <p class="leaderboard-intro">
+          Mean accuracy on the full-context split. Each model has its own color, held constant across both charts. Hover a bar to compare that model on the other split.
+        </p>
+        <div class="bench-grid">
+          <figure class="bench-card">
+            <figcaption class="bench-title">MMBU-Public</figcaption>
+            <div class="bench-chart" id="chart-public" data-split="public"></div>
+          </figure>
+          <figure class="bench-card">
+            <figcaption class="bench-title">MMBU-Private</figcaption>
+            <div class="bench-chart" id="chart-private" data-split="private"></div>
+          </figure>
+          <figure class="bench-card">
+            <figcaption class="bench-title">MMBU-Private by domain</figcaption>
+            <div class="domain-tabs" id="domain-tabs" role="tablist" aria-label="Medical domain"></div>
+            <div class="bench-chart" id="chart-private-domain" data-split="private-domain"></div>
+          </figure>
+        </div>
+        <p class="leaderboard-note">
+          Scores are mean accuracy, shown as a percentage. Higher is better.
+          Public and private items are scored separately.
+        </p>
+      </div>
+
+      <figure class="result-figure">
+        <img src="images/overall_performance.png" alt="Aggregate VLM performance on MMBU">
+        <figcaption><strong>Figure 3.</strong> Aggregate performance of representative VLMs on classification and detection tasks. Solid outlines denote open-format results; boxes without outlines denote closed-format results.</figcaption>
+      </figure>
+
+      <div class="columns is-multiline results-findings">
+        <div class="column is-full">
+          <div class="result-card result-card--lead">
+            <h3 class="title is-5"><i class="fas fa-chart-line"></i> Current Biomedical AI Models Remain Far From Human-Level Performance</h3>
+            <p>We evaluated 17 state-of-the-art vision-language models (VLMs) across diverse biomedical imaging tasks and found that performance remains surprisingly limited. Although some models achieve strong results on individual benchmarks, no model consistently performs well across the full spectrum of biomedical perception tasks (Figure 3).</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="result-card">
+            <h3 class="title is-5"><i class="fas fa-list-ul"></i> Models Depend Heavily on Multiple-Choice Cues</h3>
+            <p>Across classification tasks, performance drops dramatically when models must generate answers freely rather than choose from predefined options (Figure 3). This large gap suggests that many current biomedical VLMs rely on answer-choice cues instead of robust visual understanding.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="result-card">
+            <h3 class="title is-5"><i class="fas fa-crosshairs"></i> Object Detection Is a Major Weakness</h3>
+            <p>While several models can correctly classify findings when provided with a region of interest, they struggle to accurately localize those findings themselves (Figure 3). Detection performance remains near random across most models, highlighting significant limitations in spatial reasoning and visual grounding.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="result-card">
+            <h3 class="title is-5"><i class="fas fa-puzzle-piece"></i> No Single Model Dominates</h3>
+            <p>Different models excel on different tasks (Figure 3). GPT-based models perform strongly on some classification tasks, InternVL excels on certain grounded reasoning tasks, and Qwen-based models achieve the highest performance on segmentation-derived classification. However, no model consistently ranks first across all evaluation settings.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="result-card">
+            <h3 class="title is-5"><i class="fas fa-stethoscope"></i> Medical Adaptation Does Not Necessarily Leads to Performance  Gains</h3>
+            <p>Models trained specifically on medical data not always outperfom their general-purpose counterparts (Figure 5A). The models that do (OctoMed and MedGemma), show modest gain. In many cases, medically adapted models perform similarly  or worse to their base versions, suggesting that current adaptation strategies only partially address the challenges of biomedical visual understanding.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="result-card">
+            <h3 class="title is-5"><i class="fas fa-database"></i> Larger Medical Training Sets Matter</h3>
+            <p>The success of medical adaptation appears to depend more on the amount of biomedical training data than on model size alone (Figure 5B). Models trained on larger medical datasets tend to show more consistent improvements across tasks.</p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="result-card">
+            <h3 class="title is-5"><i class="fas fa-exclamation-circle"></i> Success on Existing Benchmarks Does Not Always Generalize</h3>
+            <p>Many specialized medical models achieve strong results on widely used benchmarks such as PathVQA, VQA-RAD, and SLAKE (Figure 6). However, these gains frequently fail to transfer to broader and more diverse biomedical settings, suggesting that current benchmarks may overestimate real-world capability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <figure class="result-figure">
+          <img src="images/radial_plots.png" alt="Model performance across biomedical domains">
+          <figcaption><strong>Figure 4.</strong> Comparison of model performance across aggregated biomedical domains. Solid lines show base models; dashed lines show medically adapted counterparts.</figcaption>
+        </figure>
+
+        <figure class="result-figure">
+          <img src="images/medical_vs_base.png" alt="Medical models vs base models on MMBU">
+          <figcaption><strong>Figure 5.</strong> Head-to-head comparison of general-purpose and medical VLMs on MMBU, showing win/tie/lose rates and the relationship between training data size and win rate.</figcaption>
+        </figure>
+
+        <figure class="result-figure">
+          <img src="images/legacy_vs_mmbu.png" alt="Performance comparison across MMBU subsets and legacy benchmarks">
+          <figcaption><strong>Figure 6.</strong> Performance comparison across MMBU subsets (x-axis) and legacy benchmarks (y-axis). Arrows indicate changes after medical adaptation. Most specialized models excel on legacy datasets (PathVQA, VQA-RAD, SLAKE) but generalize poorly to MMBU, while MedGemma and OctoMed improve on both, indicating better overall generalization.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="section hero is-light is-small">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Looking Forward</h2>
+      <div class="tldr-box conclusion-box">
+        <p>
+          Our results indicate that biomedical visual perception remains an open challenge. Despite rapid progress
+          in multimodal AI, current models still struggle with robust visual understanding, grounded reasoning, and
+          spatial localization across diverse biomedical domains. MMBU provides a comprehensive framework for
+          measuring these limitations and guiding the development of more reliable biomedical AI systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section" id="bibtex">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">BibTeX</h2>
+      <div class="bibtex-box">
+        <pre><code id="bibtex-code">@article{dcunha2026mmbu,
+  title         = {MMBU: A Massive Multi-modal Biomedical Understanding Benchmark to Probe the Perception Capabilities of Vision-Language Models},
+  author        = {D'Cunha, Ryan and Lozano, Alejandro and Sun, Xiaoxiao and Vela Jarquin, Daniel and Sun, Min Woo and Aklilu, Josiah and Burgess, James and Zhang, Yuhui and Nayebi, Ryan and Avila Robayo, Paola and Ye, Jin and Hu, Ming and Deng, Zhongying and He, Junjun and Chen, Xin and Yao, Yue and Tibshirani, Robert and Nirschl, Jeffrey J. and Yeung-Levy, Serena},
+  journal       = {arXiv preprint arXiv:2606.06696},
+  year          = {2026},
+  eprint        = {2606.06696},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2606.06696}
+}</code></pre>
+        <button class="button is-small is-rounded copy-btn" id="copy-bibtex">
+          <span class="icon"><i class="fas fa-copy"></i></span>
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container has-text-centered">
+      <p>
+        Website template adapted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+        Built for <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/private_domains.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

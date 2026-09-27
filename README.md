@@ -2,12 +2,14 @@
 
 Academic project page for **MMBU: A Massive Multi-modal Biomedical Understanding Benchmark**.
 
+**Website:** https://dcunhrya.github.io/MMBU-Website/
+
 ## Deploy to GitHub Pages
 
 1. Push this folder to a GitHub repository.
 2. Go to **Settings → Pages**.
 3. Source: **Deploy from branch** → `main` → `/ (root)`.
-4. Site live at `https://<username>.github.io/<repo>/`.
+4. Site live at [https://dcunhrya.github.io/MMBU-Website/](https://dcunhrya.github.io/MMBU-Website/).
 
 ## Assets
 

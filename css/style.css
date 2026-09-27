@@ -157,6 +157,32 @@ body {
   font-weight: 700;
 }
 
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 1.75rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sponsor-logos li {
+  display: flex;
+  align-items: center;
+}
+
+.sponsor-logos img {
+  display: block;
+  width: auto;
+}
+
+.sponsor-anthropic { height: 22px; }
+.sponsor-gxl { height: 36px; }
+.sponsor-stanford { height: 54px; }
+.sponsor-biohub { height: 30px; }
+.sponsor-highlanders { height: 24px; }
+
 .notice-box .hf-link {
   margin-top: 0.85rem;
   word-break: break-word;

@@ -28,9 +28,11 @@
       if (score > max) max = score;
     });
     var pct = max * 100;
-    if (pct <= 50) return { max: 50, ticks: [0, 10, 20, 30, 40, 50] };
-    if (pct <= 80) return { max: 80, ticks: [0, 20, 40, 60, 80] };
-    return { max: 100, ticks: [0, 25, 50, 75, 100] };
+    var top = Math.max(40, Math.ceil((pct + 10) / 20) * 20);
+    if (top > 100) top = 100;
+    var ticks = [];
+    for (var tick = 0; tick <= top; tick += 20) ticks.push(tick);
+    return { max: top, ticks: ticks };
   }
 
   function renderChart(root, entries, splitLabel) {

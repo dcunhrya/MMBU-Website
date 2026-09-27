@@ -355,8 +355,8 @@ body {
 
 .bench-chart {
   position: relative;
-  background: #0d0d0d;
-  padding: 1.1rem 0.85rem 0.35rem 0.35rem;
+  background: transparent;
+  padding: 0.4rem 0.35rem 0.35rem 0;
 }
 
 .bench-plot {
@@ -369,7 +369,7 @@ body {
   grid-column: 1;
   grid-row: 1;
   position: relative;
-  border-right: 1px solid rgba(255, 255, 255, 0.55);
+  border-right: 1px solid #222;
 }
 
 .bench-yaxis-label {
@@ -379,7 +379,7 @@ body {
   transform: translate(-50%, -50%) rotate(-90deg);
   transform-origin: center;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.82);
+  color: #333;
   white-space: nowrap;
 }
 
@@ -388,7 +388,7 @@ body {
   right: 8px;
   transform: translateY(50%);
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: #333;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
@@ -399,14 +399,14 @@ body {
   position: relative;
   display: flex;
   align-items: stretch;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  border-bottom: 1px solid #222;
 }
 
 .bench-gridline {
   position: absolute;
   left: 0;
   right: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid #ececec;
   pointer-events: none;
 }
 
@@ -423,15 +423,17 @@ body {
 }
 
 .bench-col:focus-visible .bench-bar {
-  outline: 2px solid #fff;
+  outline: 2px solid #222;
   outline-offset: 2px;
 }
 
 .bench-bar {
   position: absolute;
-  left: 8%;
-  right: 8%;
+  left: 30%;
+  right: 30%;
   bottom: 0;
+  box-sizing: border-box;
+  border: 1px solid #000;
   border-radius: 1px 1px 0 0;
   transition: opacity 0.15s ease, filter 0.15s ease;
 }
@@ -445,7 +447,7 @@ body {
   text-align: center;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #f3f3f3;
+  color: #222;
   font-variant-numeric: tabular-nums;
   pointer-events: none;
 }
@@ -471,7 +473,7 @@ body {
   transform-origin: left top;
   white-space: nowrap;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: #333;
   line-height: 1;
 }
 

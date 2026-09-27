@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=21">
+  <link rel="stylesheet" href="css/style.css?v=22">
 </head>
 <body>
 
@@ -29,6 +29,7 @@
           <a class="navbar-item" href="#methods">Methods</a>
           <a class="navbar-item" href="#benchmark">Benchmark</a>
           <a class="navbar-item" href="#results">Results</a>
+          <a class="navbar-item" href="#challenge">Challenge</a>
           <a class="navbar-item" href="#looking-forward">Looking Forward</a>
           <a class="navbar-item" href="#bibtex">BibTeX</a>
         </div>
@@ -338,6 +339,28 @@
           <img src="images/legacy_vs_mmbu.png" alt="Performance comparison across MMBU subsets and legacy benchmarks">
           <figcaption><strong>Figure 6.</strong> Performance comparison across MMBU subsets (x-axis) and legacy benchmarks (y-axis). Arrows indicate changes after medical adaptation. Most specialized models excel on legacy datasets (PathVQA, VQA-RAD, SLAKE) but generalize poorly to MMBU, while MedGemma and OctoMed improve on both, indicating better overall generalization.</figcaption>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge -->
+  <section class="section" id="challenge">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">MMBU Challenge</h2>
+      <div class="notice-box">
+        <p>
+          The MMBU Challenge evaluates models through open-ended VQA on MMBU. Three tracks cover frontier models, medically adapted models, and efficient models under 4B active parameters. Teams receive a public development set, and final rankings use a private held-out set. Registration is open through September 30, 2026, and the competition runs through the end of 2026.
+        </p>
+        <div class="buttons mt-4">
+          <a class="button is-normal is-rounded is-mmbu" href="https://luma.com/28k1tyd3" target="_blank" rel="noopener">
+            <span class="icon"><i class="fas fa-calendar-check"></i></span>
+            <span>Register on Luma</span>
+          </a>
+          <a class="button is-normal is-rounded is-mmbu" href="https://akiranishii.github.io/mmbu-challenge/" target="_blank" rel="noopener">
+            <span class="icon"><i class="fas fa-trophy"></i></span>
+            <span>Challenge website</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

@@ -84,12 +84,12 @@ body {
   color: #666;
 }
 
-.publication-links .button.is-mmbu {
+.button.is-mmbu {
   background-color: #A44BA7;
   color: white;
 }
 
-.publication-links .button.is-mmbu:hover {
+.button.is-mmbu:hover {
   background-color: #8a3d8d;
   color: white;
 }

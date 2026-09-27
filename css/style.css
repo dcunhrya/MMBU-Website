@@ -14,12 +14,12 @@ body {
 
 .challenge-logo-link {
   display: block;
-  margin: 1.5rem auto 0.25rem;
+  margin: 1.75rem auto 0;
 }
 
 .challenge-logo {
   display: block;
-  width: min(100%, 820px);
+  width: min(100%, 960px);
   height: auto;
   margin: 0 auto;
   border-radius: 8px;

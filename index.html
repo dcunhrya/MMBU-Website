@@ -196,7 +196,7 @@
 
       <h3 class="title is-4">MMBU Public and MMBU Private</h3>
       <p class="leaderboard-intro">
-        These subsets are the hard full-context open-ended slice of MMBU. The public set is released for internal benchmarking, and the private set is held for verified results. The plots are the same UMAP of image embeddings: public versus private on the left, and imaging modality on the right. Hover a point to see its split and modality.
+        These subsets are the hard full-context open-ended slice of MMBU. The public set is released for internal benchmarking and reporting unverified results, and the private set is held for verified results. The plots are the same UMAP of image embeddings: public versus private on the left, and imaging modality on the right. Hover a point to see its split and modality.
       </p>
       <div class="umap-wrap">
         <div class="umap-panels">
@@ -243,10 +243,11 @@
             <div class="bench-chart" id="chart-private" data-split="private"></div>
           </figure>
           <figure class="bench-card">
-            <figcaption class="bench-title">MMBU Private set by domain or task</figcaption>
+            <figcaption class="bench-title">MMBU Private set by domain, modality, or task</figcaption>
             <div class="split-controls">
               <div class="domain-tabs" id="split-kind" role="tablist" aria-label="Group private scores by">
                 <button type="button" role="tab" class="is-selected" aria-selected="true" data-kind="domain">Domain</button>
+                <button type="button" role="tab" aria-selected="false" data-kind="modality">Modality</button>
                 <button type="button" role="tab" aria-selected="false" data-kind="task">Task</button>
               </div>
               <label class="split-select-label" for="split-select">
@@ -257,10 +258,6 @@
             <div class="bench-chart" id="chart-private-split" data-split="private-split"></div>
           </figure>
         </div>
-        <p class="leaderboard-note">
-          Scores are mean accuracy, shown as a percentage. Higher is better.
-          Public and private items are scored separately.
-        </p>
       </div>
 
       <h3 class="title is-4">MMBU Paper Original Results</h3>
@@ -277,7 +274,7 @@
         <div class="column is-full">
           <div class="result-card result-card--lead">
             <h3 class="title is-5"><i class="fas fa-chart-line"></i> Current Biomedical AI Models Remain Far From Human-Level Performance</h3>
-            <p>We evaluated 17 state-of-the-art vision-language models (VLMs) across diverse biomedical imaging tasks and found that performance remains surprisingly limited. Although some models achieve strong results on individual benchmarks, no model consistently performs well across the full spectrum of biomedical perception tasks (Figure 3).</p>
+            <p>We evaluated frontier and open state-of-the-art vision-language models (VLMs) across diverse biomedical imaging tasks and found that performance remains surprisingly limited. Although some models achieve strong results on individual benchmarks, no model consistently performs well across the full spectrum of biomedical perception tasks (Figure 3).</p>
           </div>
         </div>
 
@@ -423,8 +420,9 @@
   <script src="js/main.js?v=21"></script>
   <script src="js/private_domains.js"></script>
   <script src="js/private_tasks.js?v=13"></script>
+  <script src="js/private_modalities.js?v=25"></script>
   <script src="js/umap_points.js?v=19"></script>
   <script src="js/umap.js?v=19"></script>
-  <script src="js/leaderboard.js?v=17"></script>
+  <script src="js/leaderboard.js?v=25"></script>
 </body>
 </html>

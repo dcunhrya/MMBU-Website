@@ -210,20 +210,36 @@
     });
   }
 
+  function modalityEntries(modalityName) {
+    var table = window.MMBU_PRIVATE_MODALITIES;
+    return MODELS.map(function (model) {
+      var pair = table.scores[model.id][modalityName];
+      return { model: model, score: pair[0], n: pair[1] };
+    });
+  }
+
+  var SPLIT_LABELS = { domain: "Domain", modality: "Modality", task: "Task" };
+
+  function splitEntries(kind, name) {
+    if (kind === "task") return taskEntries(name);
+    if (kind === "modality") return modalityEntries(name);
+    return privateEntries(name);
+  }
+
   function renderPrivateSplit(kind, name) {
-    var entries = kind === "task" ? taskEntries(name) : privateEntries(name);
-    var label = kind === "task" ? "Task" : "Domain";
     renderChart(
       splitChart,
-      entries,
-      "MMBU Private Set · " + label + " · " + name
+      splitEntries(kind, name),
+      "MMBU Private Set · " + SPLIT_LABELS[kind] + " · " + name
     );
   }
 
   function fillSplitSelect(kind) {
     var names = kind === "task"
       ? window.MMBU_PRIVATE_TASKS.tasks.map(function (task) { return task.name; })
-      : window.MMBU_PRIVATE_DOMAINS.domains.map(function (domain) { return domain.name; });
+      : kind === "modality"
+        ? window.MMBU_PRIVATE_MODALITIES.modalities.map(function (modality) { return modality.name; })
+        : window.MMBU_PRIVATE_DOMAINS.domains.map(function (domain) { return domain.name; });
     splitSelect.replaceChildren();
     names.forEach(function (name) {
       var option = document.createElement("option");
@@ -231,7 +247,7 @@
       option.textContent = name;
       splitSelect.appendChild(option);
     });
-    splitCaption.textContent = kind === "task" ? "Task" : "Domain";
+    splitCaption.textContent = SPLIT_LABELS[kind];
     if (names.length) renderPrivateSplit(kind, names[0]);
   }
 
@@ -246,7 +262,7 @@
     renderChart(privateChart, privateEntries(null), "MMBU Private Set");
   }
 
-  if (splitChart && splitKind && splitSelect && window.MMBU_PRIVATE_DOMAINS && window.MMBU_PRIVATE_TASKS) {
+  if (splitChart && splitKind && splitSelect && window.MMBU_PRIVATE_DOMAINS && window.MMBU_PRIVATE_TASKS && window.MMBU_PRIVATE_MODALITIES) {
     var currentKind = "domain";
     fillSplitSelect(currentKind);
     splitKind.querySelectorAll("button").forEach(function (button) {

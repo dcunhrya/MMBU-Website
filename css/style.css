@@ -395,8 +395,50 @@ body {
   margin: 0 0 0.55rem;
 }
 
-.bench-chart {
+.umap-wrap {
+  margin-top: 0.25rem;
+}
+
+.umap-legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 0.45rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.umap-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.umap-swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.umap-swatch-private {
+  background: #0072B2;
+}
+
+.umap-swatch-public {
+  background: #E69F00;
+}
+
+.umap-plot {
   position: relative;
+}
+
+.umap-plot canvas {
+  display: block;
+  width: 100%;
+  height: 480px;
+  cursor: crosshair;
+  background: #fff;
+}
   background: transparent;
   padding: 0.4rem 0.35rem 0.35rem 0;
 }

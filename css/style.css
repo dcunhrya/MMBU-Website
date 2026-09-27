@@ -508,6 +508,7 @@ body {
   display: block;
   font-size: 0.84rem;
   margin-bottom: 0.15rem;
+  color: #fff;
 }
 
 .bench-tip .bench-tip-score {

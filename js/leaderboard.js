@@ -18,10 +18,6 @@
     return percent(score).toFixed(1);
   }
 
-  function formatCount(n) {
-    return n.toLocaleString("en-US");
-  }
-
   function axisFor(scores) {
     var max = 0;
     scores.forEach(function (score) {
@@ -161,8 +157,7 @@
     tip.innerHTML =
       "<strong>" + model.name + "</strong>" +
       "<div class=\"bench-tip-score\">" + formatScore(score) + "</div>" +
-      "<div>" + splitLabel + " · rank " + rank + "</div>" +
-      "<div>" + formatCount(count) + " items scored</div>";
+      "<div>" + splitLabel + " · rank " + rank + "</div>";
     tip.hidden = false;
 
     var chartRect = root.getBoundingClientRect();

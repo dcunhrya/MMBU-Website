@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=18">
+  <link rel="stylesheet" href="css/style.css?v=19">
 </head>
 <body>
 
@@ -172,17 +172,27 @@
 
       <h3 class="title is-4">MMBU Public and MMBU Private</h3>
       <p class="leaderboard-intro">
-        These subsets are the hard full-context open-ended slice of MMBU. The public set is released for internal benchmarking, and the private set is held for verified results. The plot is a UMAP of image embeddings for the two open sets. Hover a point to see its split, modality, and domain.
+        These subsets are the hard full-context open-ended slice of MMBU. The public set is released for internal benchmarking, and the private set is held for verified results. The plots are the same UMAP of image embeddings: public versus private on the left, and imaging modality on the right. Hover a point to see its split and modality.
       </p>
       <div class="umap-wrap">
-        <div class="umap-legend">
-          <span><i class="umap-swatch umap-swatch-private"></i> Private</span>
-          <span><i class="umap-swatch umap-swatch-public"></i> Public</span>
+        <div class="umap-panels">
+          <div class="umap-panel">
+            <div class="umap-legend">
+              <span><i class="umap-swatch umap-swatch-private"></i> Private</span>
+              <span><i class="umap-swatch umap-swatch-public"></i> Public</span>
+            </div>
+            <div class="umap-plot">
+              <canvas id="umap-split" aria-label="UMAP of MMBU public and private images"></canvas>
+            </div>
+          </div>
+          <div class="umap-panel">
+            <div class="umap-legend umap-legend-mod" id="umap-mod-legend"></div>
+            <div class="umap-plot">
+              <canvas id="umap-modality" aria-label="UMAP of MMBU images by modality"></canvas>
+            </div>
+          </div>
         </div>
-        <div class="umap-plot">
-          <canvas id="umap-canvas" aria-label="UMAP of MMBU public and private images"></canvas>
-          <div class="bench-tip" id="umap-tip" hidden></div>
-        </div>
+        <div class="bench-tip" id="umap-tip" hidden></div>
       </div>
     </div>
   </section>
@@ -360,8 +370,8 @@
   <script src="js/main.js"></script>
   <script src="js/private_domains.js"></script>
   <script src="js/private_tasks.js?v=13"></script>
-  <script src="js/umap_points.js?v=18"></script>
-  <script src="js/umap.js?v=18"></script>
+  <script src="js/umap_points.js?v=19"></script>
+  <script src="js/umap.js?v=19"></script>
   <script src="js/leaderboard.js?v=17"></script>
 </body>
 </html>

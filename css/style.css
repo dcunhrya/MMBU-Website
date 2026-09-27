@@ -429,8 +429,8 @@ body {
 
 .bench-bar {
   position: absolute;
-  left: 30%;
-  right: 30%;
+  left: 16%;
+  right: 16%;
   bottom: 0;
   box-sizing: border-box;
   border: 1px solid #000;

@@ -206,7 +206,7 @@
     renderChart(
       domainChart,
       privateEntries(domainName),
-      "MMBU-Private · " + domainName
+      "MMBU Private Set · " + domainName
     );
   }
 
@@ -215,8 +215,8 @@
   var domainChart = document.getElementById("chart-private-domain");
   var tablist = document.getElementById("domain-tabs");
   if (publicChart && privateChart) {
-    renderChart(publicChart, publicEntries(), "MMBU-Public");
-    renderChart(privateChart, privateEntries(null), "MMBU-Private");
+    renderChart(publicChart, publicEntries(), "MMBU Public Set");
+    renderChart(privateChart, privateEntries(null), "MMBU Private Set");
   }
 
   if (domainChart && tablist && window.MMBU_PRIVATE_DOMAINS) {

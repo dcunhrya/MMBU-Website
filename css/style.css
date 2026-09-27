@@ -308,8 +308,15 @@ body {
   font-weight: 700;
   font-size: 1.05rem;
   color: #222;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.2rem;
   text-align: left;
+}
+
+.bench-note {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0 0 0.7rem;
 }
 
 .domain-tabs {

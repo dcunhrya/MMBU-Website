@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body>
 
@@ -173,17 +173,19 @@
       <h2 class="title is-3">Results</h2>
 
       <div class="leaderboard" id="leaderboard">
-        <h3 class="title is-4">Full-context leaderboard</h3>
+        <h3 class="title is-4">MMBU Leaderboard</h3>
         <p class="leaderboard-intro">
-          Mean accuracy on the full-context split. Each model has its own color, held constant across both charts. Hover a bar to compare that model on the other split.
+          Mean accuracy on a hard subset of MMBU with open-ended VQA that created both the public and private sets. Each frontier model has its own color, held constant across both charts. Hover a bar to compare that model on the other split. More models benchmarked on MMBU are shown below.
         </p>
         <div class="bench-grid">
           <figure class="bench-card">
-            <figcaption class="bench-title">MMBU-Public</figcaption>
+            <figcaption class="bench-title">MMBU Public Set</figcaption>
+            <p class="bench-note">~3k open-ended questions across all domains and modalities in MMBU released publicly on Hugging Face</p>
             <div class="bench-chart" id="chart-public" data-split="public"></div>
           </figure>
           <figure class="bench-card">
-            <figcaption class="bench-title">MMBU-Private</figcaption>
+            <figcaption class="bench-title">MMBU Private Set</figcaption>
+            <p class="bench-note">~9k open-ended questions across all domains and modalities in MMBU held privately</p>
             <div class="bench-chart" id="chart-private" data-split="private"></div>
           </figure>
           <figure class="bench-card">
@@ -323,6 +325,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/private_domains.js"></script>
-  <script src="js/leaderboard.js?v=11"></script>
+  <script src="js/leaderboard.js?v=12"></script>
 </body>
 </html>

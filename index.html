@@ -9,12 +9,35 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=19">
+  <link rel="stylesheet" href="css/style.css?v=21">
 </head>
 <body>
 
+  <nav class="navbar site-nav" role="navigation" aria-label="Sections">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item site-nav-brand" href="#top">MMBU</a>
+        <button class="navbar-burger" type="button" aria-label="Menu" aria-expanded="false" data-target="site-nav-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div id="site-nav-menu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#methods">Methods</a>
+          <a class="navbar-item" href="#benchmark">Benchmark</a>
+          <a class="navbar-item" href="#results">Results</a>
+          <a class="navbar-item" href="#looking-forward">Looking Forward</a>
+          <a class="navbar-item" href="#bibtex">BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero -->
-  <section class="hero is-light">
+  <section class="hero is-light" id="top">
     <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
         <h1 class="title is-2 publication-title">
@@ -76,7 +99,7 @@
   </section>
 
   <!-- Abstract -->
-  <section class="section tldr-section">
+  <section class="section tldr-section" id="abstract">
     <div class="container is-max-desktop">
       <div class="tldr-box">
         <h2 class="title is-4"><i class="fas fa-file-alt"></i> Abstract</h2>
@@ -125,7 +148,7 @@
   </section>
 
   <!-- Methods -->
-  <section class="section hero is-light is-small">
+  <section class="section hero is-light is-small" id="methods">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Methods</h2>
       <div class="columns is-multiline">
@@ -198,7 +221,7 @@
   </section>
 
   <!-- Results -->
-  <section class="section">
+  <section class="section" id="results">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Results</h2>
 
@@ -320,7 +343,7 @@
   </section>
 
   <!-- Conclusion -->
-  <section class="section hero is-light is-small">
+  <section class="section hero is-light is-small" id="looking-forward">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Looking Forward</h2>
       <div class="tldr-box conclusion-box">
@@ -367,7 +390,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=21"></script>
   <script src="js/private_domains.js"></script>
   <script src="js/private_tasks.js?v=13"></script>
   <script src="js/umap_points.js?v=19"></script>

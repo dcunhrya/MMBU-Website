@@ -1,5 +1,40 @@
+html {
+  scroll-padding-top: 3.75rem;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.site-nav .navbar-item {
+  font-family: 'Google Sans', sans-serif;
+  color: #444;
+}
+
+.site-nav .navbar-item:hover,
+.site-nav .navbar-item:focus,
+.site-nav .navbar-item.is-active {
+  color: #A44BA7;
+  background: transparent;
+}
+
+.site-nav-brand {
+  font-weight: 700;
+  color: #A44BA7 !important;
+}
+
+.site-nav .navbar-burger {
+  color: #A44BA7;
 }
 
 .publication-title {
@@ -403,16 +438,23 @@ body {
 .umap-panels {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
+  column-gap: 1.25rem;
   align-items: start;
+}
+
+.umap-panel {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  row-gap: 0.35rem;
 }
 
 .umap-legend {
   display: flex;
   flex-wrap: wrap;
+  align-content: end;
   gap: 0.45rem 0.9rem;
-  min-height: 2.6rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0;
   color: #333;
   font-size: 0.82rem;
 }
@@ -460,6 +502,16 @@ body {
 @media screen and (max-width: 900px) {
   .umap-panels {
     grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+  }
+
+  .umap-panel {
+    display: block;
+    grid-row: auto;
+  }
+
+  .umap-legend {
+    margin-bottom: 0.35rem;
   }
 }
 

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="MMBU: A Massive Multi-modal Biomedical Understanding Benchmark">
   <title>MMBU — Massive Multi-modal Biomedical Understanding Benchmark [ECCV 2026]</title>
+  <link rel="icon" href="favicon.ico?v=1" sizes="any">
+  <link rel="icon" type="image/png" href="images/favicon.png?v=1">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -196,7 +198,7 @@
 
       <h3 class="title is-4">MMBU Public and MMBU Private</h3>
       <p class="leaderboard-intro">
-        These subsets are the hard full-context open-ended slice of MMBU. The public set is released for internal benchmarking and reporting unverified results, and the private set is held for verified results. The plots are the same UMAP of image embeddings: public versus private on the left, and imaging modality on the right. Hover a point to see its split and modality.
+        From MMBU, we curated a hard subset consisting of full-context open-ended VQA and split that into public and private sets. The public set is released for internal benchmarking and reporting unverified results, and the private set is held for verified results. The plots are the same UMAP of image embeddings: public versus private on the left, and imaging modality on the right. Hover a point to see its split and modality.
       </p>
       <div class="umap-wrap">
         <div class="umap-panels">
@@ -229,7 +231,7 @@
       <div class="leaderboard" id="leaderboard">
         <h3 class="title is-4">MMBU Leaderboard</h3>
         <p class="leaderboard-intro">
-          From MMBU, we curated a hard subset consisting of full-context open-ended VQA and split that into public and private sets with mean accuracy shown below. Each frontier model has its own color, held constant across both charts. Hover a bar to compare that model on the other split. More models benchmarked on MMBU are shown below.
+          From the MMBU Hard set, we benchmarked the last frontier models as of September 2026 with mean accuracy shown below. Earlier models from MMBU get &lt;10% on the MMBU Hard set. Each latest frontier model has its own color, held constant across both charts. Hover a bar to compare that model on the other split. More models benchmarked on MMBU are shown below.
         </p>
         <div class="bench-grid">
           <figure class="bench-card">

@@ -2,6 +2,7 @@
   var MODELS = [
     { id: "claude-opus-5-5", name: "Claude Opus 5.5", color: "#4C78D8", public: 0.3703352308665402, private: 0.33569816188326346, nPublic: 3162, nPrivate: 9303 },
     { id: "gpt-6-astra", name: "GPT-6 Astra", color: "#E07A3D", public: 0.34827144686299616, private: 0.3037141006262146, nPublic: 3124, nPrivate: 9262 },
+    { id: "claude-sonnet-5-5", name: "Claude Sonnet 5.5", color: "#148F8A", public: 0.31752055660974066, private: 0.2737340070960112, nPublic: 3162, nPrivate: 9301 },
     { id: "claude-opus-5", name: "Claude Opus 5", color: "#3A9B78", public: 0.27876668785759695, private: 0.27031114952463264, nPublic: 3146, nPrivate: 9256 },
     { id: "gpt-5.6-sol", name: "GPT-5.6 Sol", color: "#8B6CC9", public: 0.2606484424666243, private: 0.23795115625675384, nPublic: 3146, nPrivate: 9254 },
     { id: "Qwen3.8-27B", name: "Qwen3.8 27B", color: "#C06BB8", public: 0.19734345351043645, private: 0.17392239062667958, nPublic: 3162, nPrivate: 9303 },
